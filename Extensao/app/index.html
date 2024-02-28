@@ -2,36 +2,34 @@
 <html lang="pt-br">
 
 <head>
-	<link rel="stylesheet" type="text/css" href="estilo.css" />
-	<meta charset="UTF-8">
-	<title>Loop Legends</title>
-	<!-- Aqui chamamos o nosso arquivo css externo -->
-	<link rel="stylesheet" type="text/css" href="estilo.css" />
-	<!--[if lte IE 8]>
- <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
- <![endif]-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="estilo.css" />
+    <title>Loop Legends</title>
+    <!--[if lte IE 8]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 </head>
 
 <body>
-	<div class="body">
-		<div class="nav">
-			<div class="button2"><a href="home.html">Jogar</a></div>
-			<div class="button" ><a href="historico.html">Histórico</a></div>
-			<div class="button3"><a href="controle.html">Controles</a></div>
-		</div>
-		<div class="title">Loop Legends</div>
-		<div class="score" id="score"> </div>
-		<div style="width: 70%; height: 55%; left: 15%; top: 303px; position: absolute; background: black;">
-			<canvas class="screen"></canvas>
-			<script src="index.js"></script>
-		</div>
-		<div>
-			<a class="mainbuttonIndex" href="index.html">
-				<button>Reiniciar Partida</button>
-			</a>
-		</div>
-	</div>
+    <div class="body">
+        <div class="nav">
+            <div class="button2"><a href="home.html">Jogar</a></div>
+            <div class="button"><a href="historico.html">Histórico</a></div>
+            <div class="button3"><a href="controle.html">Controles</a></div>
+        </div>
+        <div class="title">Loop Legends</div>
+        <div class="score" id="score"> </div>
+        <div class="canvas-container">
+            <canvas class="screen"></canvas>
+            <script src="index.js"></script>
+        </div>
+        <div class="mainbutton">
+            <a href="./index.html">
+                <button>Reiniciar Partida</button>
+            </a>
+        </div>
+    </div>
 </body>
-
 
 </html>

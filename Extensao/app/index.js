@@ -22,7 +22,7 @@ class Player { //jogador
 
         c.fillStyle = "red"
         c.beginPath()
-        c.fillRect(this.position.x, this.position.y, 80, 80)
+        c.fillRect(this.position.x, this.position.y, 60, 60)
         c.fill
 
         c.restore()
@@ -30,29 +30,28 @@ class Player { //jogador
 
     update() {
         if (!gameRunning) {
-            return
+            return;
         }
-        this.draw()
-        this.position.x += this.velocity.x
-        this.position.y += this.velocity.y
-
+        this.draw();
+        this.position.x += this.velocity.x;
+        this.position.y += this.velocity.y;
+    
         // Verificar colisão com bolas de fogo
         for (let i = fireballs.length - 1; i >= 0; i--) {
             const fireball = fireballs[i];
-
+    
             // Calcular a distância entre o jogador e a bola de fogo
             const distance = Math.sqrt(
                 Math.pow(this.position.x - fireball.position.x, 2) +
                 Math.pow(this.position.y - fireball.position.y, 2)
             );
-
+    
             // Se houver colisão, encerra o jogo
             if (distance < 40 + fireball.radius) {
                 endGame();
                 return;
             }
         }
-
     }
 }
 
@@ -103,16 +102,16 @@ const keys = {
 }
 
 window.setInterval(() => {
-    const index = Math.floor(Math.random() * 4)
+    const index = Math.floor(Math.random() * 2)
     let x, y
     let vx, vy
-    let radius = 40 * Math.random() + 30
+    let radius = 40
 
     switch (index) {
-        case 0: //Sapwn Bola de Fogo Esquerda
-            x = 0 - radius
+        case 0: //Sapwn Bola de Fogo Direita
+            x = 0 + radius
             y = Math.random() * canvas.height
-            vx = speedFireball
+            vx = +speedFireball
             vy = 0
             break
         case 1: //Spawn Bola de Fogo em Baixo
@@ -121,10 +120,10 @@ window.setInterval(() => {
             vx = 0
             vy = -speedFireball
             break
-        case 2: //Spawn Bola de Fogo Direita
-            x = canvas.width + radius
+        case 2: //Spawn Bola de Fogo Esquerda
+            x = canvas.width - radius
             y = Math.random() * canvas.height
-            vx = -speedFireball
+            vx = speedFireball
             vy = 0
             break
         case 3: //Spawn Bola de Fogo em Cima
