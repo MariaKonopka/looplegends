@@ -2,10 +2,10 @@
 <html lang="pt-br">
 
 <head>
-    <link rel="stylesheet" type="text/css" href="estilo.css" />
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="estilo.css" />
     <title>Loop Legends</title>
-    <!-- Aqui chamamos o nosso arquivo css externo -->
     <!--[if lte IE 8]>
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -14,22 +14,20 @@
 <body>
     <div class="body">
         <div class="nav">
-            <div class="button2"><a href="home.html">Jogar</a></div>
+            <div class="button2"><a href="index.html">Jogar</a></div>
             <div class="button"><a href="historico.html">Histórico</a></div>
             <div class="button3"><a href="controle.html">Controles</a></div>
         </div>
-        <div class="mainbutton">
-            <a href="index.html">
-                <button>Iniciar Partida</button>
-            </a>
+        <div class="title">Loop Legends</div>
+        <div class="score" id="score"> </div>
+        <div class="canvas-container">
+            <canvas class="screen"></canvas>
+            <script src="index.js"></script>
         </div>
-        <div>
-            <p> Loop Legends é um projeto que tem como principal objetivo melhorar a coordenação motora e tomada
-                de decisões dos usuários.
-            <br/> Para isso, criaremos um jogo em que, com o passar do tempo, se torne cada
-                vez mais rápido e difícil, no qual o usuário deve se adaptar ao ritmo, com o propósito de
-                desenvolver suas capacidades motoras e de tomada de decisão.
-            </p>
+        <div class="mainbutton">
+            <a href="./index.html">
+                <button>Reiniciar Partida</button>
+            </a>
         </div>
     </div>
 </body>
