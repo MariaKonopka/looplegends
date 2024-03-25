@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Histórico de Pontuações - Loop Legends</title>
+    <!-- Aqui chamamos o nosso arquivo css externo -->
+    <link rel="stylesheet" type="text/css" href="estilo.css" />
+    <!--[if lte IE 8]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="body">
+      <div class="nav">
+        <div class="button2"><a href="home.html">Jogar</a></div>
+        <div class="button"><a href="historico.html">Histórico</a></div>
+        <div class="button3"><a href="controle.html">Controles</a></div>
+      </div>
+
+      <div class="historico">
+        <h2>Histórico de Pontuações</h2>
+        <ul id="historico-pontuacoes">
+          <!-- Pontuações serão inseridas aqui dinamicamente -->
+        </ul>
+      </div>
+    </div>
+
+    <script>
+      // Recuperar todas as pontuações do armazenamento local
+      var historicoPontuacoes =
+        JSON.parse(localStorage.getItem("historicoPontuacoes")) || [];
+
+      historicoPontuacoes.sort(function (a, b) {
+        return b - a; // Ordenar em ordem decrescente
+      });
+      // Exibir as pontuações
+      var historicoList = document.getElementById("historico-pontuacoes");
+      
+
+
+    for(let i in historicoPontuacoes) {
+        if(i>=5){
+            break;
+        }
+        var listItem = document.createElement("li");
+
+        listItem.textContent = historicoPontuacoes[i];
+        historicoList.appendChild(listItem);
+        
+      
+      }
+    </script>
+  </body>
+</html>
